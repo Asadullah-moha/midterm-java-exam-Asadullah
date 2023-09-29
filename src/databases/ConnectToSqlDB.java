@@ -181,9 +181,9 @@ public class ConnectToSqlDB {
         return list;
     }
 
-//    public static void main(String[] args) throws Exception {
-//        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
-//        int[] array = {123,456,789};
-//        connectToSqlDB.insertDataFromArrayToSqlTable(array, "phonemumbers", "number1");
-//    }
+    public static void main(String[] args) throws Exception {
+        ConnectToSqlDB connectToSqlDB = new ConnectToSqlDB();
+        int[] array = {123,456,789};
+        connectToSqlDB.insertDataFromArrayToSqlTable(array, "phonemumbers", "number1");
+    }
 }
