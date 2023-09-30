@@ -13,10 +13,49 @@ public class FortuneEmployee {
 	 * 	 * Use any databases[MySql] to store data and retrieve data.
 	 *
 	 **/
-	public static void main(String[] args) {
-		
+	public class EmployeeInfo {
+		private int employeeId;
+		private String employeeName;
+		private String department;
+		private double salary;
 
+		public EmployeeInfo(int i, String johnDoe, String hr, double v) {
+		}
+
+		public void setSalary(double v) {
+		}
+	}
+	public static class EmployeeDatabase {
+		public static void insertEmployee(EmployeeInfo employee1) {
+		}
+
+		public static EmployeeInfo getEmployeeById(int i) {
+
+            return null;
+        }
+
+		public static void deleteEmployee(int i) {
+		}
+
+		public static void updateEmployee(EmployeeInfo employee1) {
+		}
+
+		}
+	public void main(String[] args) {
+		EmployeeInfo employee1 = new EmployeeInfo(101, "John Doe", "HR", 55000.0);
+		EmployeeInfo employee2 = new EmployeeInfo(102, "Alice Smith", "IT", 65000.0);
+
+		EmployeeDatabase.insertEmployee(employee1);
+		EmployeeDatabase.insertEmployee(employee2);
+
+		EmployeeInfo retrievedEmployee = EmployeeDatabase.getEmployeeById(101);
+		System.out.println("Retrieved Employee: " + retrievedEmployee);
+
+		employee1.setSalary(58000.0);
+		EmployeeDatabase.updateEmployee(employee1);
+
+		EmployeeDatabase.deleteEmployee(102);
 
 	}
-
 }
+
