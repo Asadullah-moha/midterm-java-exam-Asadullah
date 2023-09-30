@@ -145,14 +145,15 @@ public class Sort {
         array[i + 1] = array[high];
         array[high] = temp;
 
-        return list;
+        return temp;
     }
     
     public int [] heapSort(int [] array){
         int [] list = array;
         //implement here
+        int n = 0;
         for (int i = n / 2 - 1; i >= 0; i--) {
-            heaper(array, n, i);
+            heapSort(array, n, i);
         }
 
         for (int i = n - 1; i > 0; i--) {
@@ -160,11 +161,13 @@ public class Sort {
             array[0] = array[i];
             array[i] = temp;
 
-            // Call heapify on the reduced heap
-            heaper(array, i, 0);
+            heapSort(array);
         }
 
         return list;
+    }
+
+    private void heapSort(int[] array, int n, int i) {
     }
 
 
