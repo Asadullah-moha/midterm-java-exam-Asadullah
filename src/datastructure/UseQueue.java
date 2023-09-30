@@ -1,5 +1,9 @@
 package datastructure;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class UseQueue {
 
 	public static void main(String[] args) {
@@ -9,6 +13,35 @@ public class UseQueue {
 		 * 
 		 */
 
+		Queue<Integer> queue = new LinkedList<>();
+
+		queue.add(10);
+		queue.add(20);
+		queue.add(30);
+		queue.offer(40);
+
+		System.out.println("Elements using For Each loop:");
+		for (int element : queue) {
+			System.out.println(element);
+		}
+
+		System.out.println("\nElements using while loop and Iterator:");
+		Iterator<Integer> iterator = queue.iterator();
+		while (iterator.hasNext()) {
+			int element = iterator.next();
+			System.out.println(element);
+		}
+
+		int frontElement = queue.peek();
+		System.out.println("\nFront element (peeked): " + frontElement);
+
+		int removedElement = queue.remove();
+		System.out.println("\nRemoved element (dequeued): " + removedElement);
+
+		System.out.println("\nUpdated Queue:");
+		for (int element : queue) {
+			System.out.println(element);
+		}
 	}
 
 }
