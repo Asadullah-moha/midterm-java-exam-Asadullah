@@ -108,7 +108,7 @@ public class Sort {
         System.arraycopy(left, leftIndex, result, resultIndex, left.length - leftIndex);
         System.arraycopy(right, rightIndex, result, resultIndex, right.length - rightIndex);
 
-        return list;
+        return result;
     }
     
 
