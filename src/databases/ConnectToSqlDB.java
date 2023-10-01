@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+@SuppressWarnings("ALL")
 public class ConnectToSqlDB {
 
     public static Connection connect = null;
@@ -63,8 +64,8 @@ public class ConnectToSqlDB {
             if(connect != null){
                 connect.close();
             }
-        }catch(Exception e){
-
+        }catch(Exception e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -92,10 +93,13 @@ public class ConnectToSqlDB {
             }
 
         } catch (IOException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         } catch (SQLException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         }
     }
@@ -108,10 +112,13 @@ public class ConnectToSqlDB {
             ps.setString(1,ArrayData);
             ps.executeUpdate();
         } catch (IOException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         } catch (SQLException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         }
     }
@@ -144,10 +151,13 @@ public class ConnectToSqlDB {
 
 
         } catch (IOException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         } catch (SQLException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            //noinspection CallToPrintStackTrace
             e.printStackTrace();
         }
     }

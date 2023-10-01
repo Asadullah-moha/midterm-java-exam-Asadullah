@@ -20,7 +20,7 @@ public static void main(String[] args) {
 
         Collection<String> values = map.values();
         for (String value : values) {
-                System.out.println(value);
+            System.out.println(value);
         }
 
     }

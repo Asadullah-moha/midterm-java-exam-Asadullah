@@ -1,5 +1,6 @@
 package math.problems;
 
+@SuppressWarnings({"ALL", "unused"})
 public class Factorial {
 
     public static void main(String[] args) {
@@ -16,6 +17,7 @@ public class Factorial {
         }
     }
 
+    @SuppressWarnings("unused")
     public static long calculateFactorialIterative(int n) {
         long factorial = 1;
         for (int i = 1; i <= n; i++) {

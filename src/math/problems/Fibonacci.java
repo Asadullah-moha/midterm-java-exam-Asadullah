@@ -1,6 +1,8 @@
 package math.problems;
 
+@SuppressWarnings("ALL")
 public class Fibonacci {
+    @SuppressWarnings("unused")
     public Fibonacci() {
     }
 

@@ -1,5 +1,6 @@
 package algorithm;
 
+@SuppressWarnings("unused")
 public class Sort {
 
     long executionTime = 0;
@@ -228,8 +229,8 @@ public class Sort {
     }
 
     public static void printSortedArray(int [] array){
-        for(int i=0; i<array.length; i++){
-            System.out.println(array[i]);
+        for (int j : array) {
+            System.out.println(j);
         }
     }
 }

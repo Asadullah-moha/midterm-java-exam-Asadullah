@@ -3,6 +3,7 @@ package string.problems;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("ALL")
 public class DetermineLargestWord {
     public static void main(String[] args) {
         /*

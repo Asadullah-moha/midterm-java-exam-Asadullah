@@ -1,5 +1,6 @@
 package design;
 
+@SuppressWarnings({"ALL", "unused"})
 public class FortuneEmployee {
 
 	/**
@@ -13,9 +14,13 @@ public class FortuneEmployee {
 	 * * Use any databases[MySql] to store data and retrieve data.
 	 **/
 	public static class EmployeeInfo {
+		@SuppressWarnings("unused")
 		private int employeeId;
+		@SuppressWarnings("unused")
 		private String employeeName;
+		@SuppressWarnings("unused")
 		private String department;
+		@SuppressWarnings("unused")
 		private double salary;
 
 		public EmployeeInfo(int employeeId, String employeeName, String department, double salary, Object args) {
@@ -26,9 +31,11 @@ public class FortuneEmployee {
 
 
 			class EmployeeDatabase {
+				@SuppressWarnings("unused")
 				public static void insertEmployee(EmployeeInfo employee1) {
 				}
 
+				@SuppressWarnings("unused")
 				public static EmployeeInfo getEmployeeById(int i) {
 
 					return null;

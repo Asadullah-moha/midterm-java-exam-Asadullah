@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Stack;
 
+@SuppressWarnings("ALL")
 public class DataReader {
 
 	public static void main(String[] args) {

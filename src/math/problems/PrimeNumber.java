@@ -37,4 +37,8 @@ public class PrimeNumber {
 
 		System.out.println("\nTotal prime numbers between 2 and 1 million: " + count);
 	}
+
+	public static boolean isPrime(int i) {
+        return false;
+	}
 }

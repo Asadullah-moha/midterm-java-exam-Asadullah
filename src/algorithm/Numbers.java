@@ -58,7 +58,7 @@ public class Numbers {
 		}
 	}
 
-	public static void randomize( int arr[], int n)
+	public static void randomize(int[] arr, int n)
 	{
 		Random r = new Random();
 		// Start from the last element and swap one by one. We don't
@@ -71,8 +71,8 @@ public class Numbers {
 		}
 	}
 	public static void printValue(List<String> array){
-		for(String st:array){
-			System.out.println(st);
-		}
+		for(String st:array) {
+            System.out.println(st);
+        }
 	}
 }

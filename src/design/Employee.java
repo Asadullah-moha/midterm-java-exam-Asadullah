@@ -1,5 +1,6 @@
 package design;
 
+@SuppressWarnings("ALL")
 public interface Employee {
 	
 	/*Employee is an Interface which contains multiple unimplemented methods.Again few methods
@@ -9,18 +10,25 @@ public interface Employee {
 	//and then implement these in a concrete class.
 	
 	//employeeId() will return employee id.
+	@SuppressWarnings("unused")
 	public int employeeId();
 	
 	//employeeName() will return employee name
+	@SuppressWarnings("unused")
 	public String employeeName();
-	
+
 	//assignDepartment() will assign employee to departments
-    public void assignDepartment();
-	
+	@SuppressWarnings("unused")
+	public default void assignDepartment() {
+
+	}
+
 	//calculate employee salary
+	@SuppressWarnings("unused")
 	public int calculateSalary();
 	
 	//employee benefit
+	@SuppressWarnings("unused")
 	public void benefitLayout();
 
 }

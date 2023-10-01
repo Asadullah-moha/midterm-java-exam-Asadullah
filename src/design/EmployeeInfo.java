@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
+@SuppressWarnings("ALL")
 public class EmployeeInfo {
 	
  /*This class can be implemented from Employee interface then add additional methods in EmployeeInfo class.
@@ -23,7 +24,7 @@ public class EmployeeInfo {
 	/*
 	 * declare few static and final fields and some non-static fields
 	 */
-	static String companyName;
+	 static String companyName;
 	static final int PERFORMANCE_BEST = 1;
 	static final int PERFORMANCE_AVERAGE = 2;
 	/*
@@ -40,7 +41,7 @@ public class EmployeeInfo {
 	public EmployeeInfo(){
 
 	}
-    public EmployeeInfo(int employeeId){
+    public EmployeeInfo(@SuppressWarnings("unused") int employeeId){
 	}
 
 	public EmployeeInfo(int i, String hr, double v) {
@@ -95,7 +96,7 @@ public class EmployeeInfo {
 
 		long millisecondsInYear = 1000L * 60 * 60 * 24 * 365;
 		long differenceInMilliseconds = 0;
-		int yearsWithCompany = (int) (differenceInMilliseconds / millisecondsInYear);
+		int yearsWithCompany = (int) (0);
 
 		// Calculate pension based on the number of years with the company and salary
 		total = (int) (0.05 * yearsWithCompany * salary); // Assuming 5% pension per year
@@ -105,6 +106,12 @@ public class EmployeeInfo {
 	}
 	private static class DateConversion {
 
+		@SuppressWarnings("unused")
+		public DateConversion() {
+			this(null);
+		}
+
+		@SuppressWarnings("unused")
 		public DateConversion(Months months){}
 		public static String convertDate(String date) {
 			String [] extractMonth = date.split(",");
