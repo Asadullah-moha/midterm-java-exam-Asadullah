@@ -8,8 +8,16 @@ public class Pattern {
 		 *
 		 *
 		 */
-		
+		int number = 100;
 
+		while (number >= 0) {
+			System.out.print(number + ",");
 
+			if (number % 10 == 0) {
+				number -= 2;
+			} else {
+				number -= 1;
+			}
+		}
 	}
 }
