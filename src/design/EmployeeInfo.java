@@ -1,5 +1,6 @@
 package design;
 
+import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Scanner;
@@ -76,14 +77,14 @@ public class EmployeeInfo {
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public int calculateEmployeePension(Date joiningDate, Date todaysDate){
+	public int calculateEmployeePension(Date joiningDate, Date todaysDate) throws ParseException {
 		int total=0;
-		Scanner sc  = new Scanner(System.in);
-		System.out.println("Please enter start date in format (example: May,2015): ");
-		String joiningDate = sc.nextLine();
-		System.out.println("Please enter today's date in format (example: August,2017): ");
-		String todayDate = sc.nextLine();
-		String convertedJoiningDate = DateConversion.convertDate(joiningDate);
+		String todayDate;
+		try (Scanner sc = new Scanner(System.in)) {
+			System.out.println("Please enter today's date in format (example: August,2017): ");
+			todayDate = sc.nextLine();
+		}
+		String convertedJoiningDate = DateConversion.convertDate(String.valueOf(joiningDate));
         String convertedTodaysDate;
 		convertedTodaysDate = DateConversion.convertDate(todayDate);
 
@@ -92,21 +93,14 @@ public class EmployeeInfo {
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM,yyyy");
 
-		try {
-			long millisecondsInYear = 1000L * 60 * 60 * 24 * 365;
-			long differenceInMilliseconds = todayDate.trim() - joiningDate.trim();
-			int yearsWithCompany = (int) (differenceInMilliseconds / millisecondsInYear);
+		long millisecondsInYear = 1000L * 60 * 60 * 24 * 365;
+		long differenceInMilliseconds = 0;
+		int yearsWithCompany = (int) (differenceInMilliseconds / millisecondsInYear);
 
-			// Calculate pension based on the number of years with the company and salary
-			total = (int) (0.05 * yearsWithCompany * salary); // Assuming 5% pension per year
+		// Calculate pension based on the number of years with the company and salary
+		total = (int) (0.05 * yearsWithCompany * salary); // Assuming 5% pension per year
 
-			System.out.println("Years with the company: " + yearsWithCompany);
-			return total;
-		} catch (ParseException e) {
-			e.printStackTrace();
-			System.out.println("Invalid date format. Please use the format (example: May,2015).");
-		}
-
+		System.out.println("Years with the company: " + yearsWithCompany);
 		return total;
 	}
 	private static class DateConversion {
@@ -142,22 +136,22 @@ public class EmployeeInfo {
 					date = 6;
 					break;
 				case July:
-					date = 1;
+					date = 7;
 					break;
 				case August:
-					date = 1;
+					date = 8;
 					break;
 				case September:
-					date = 1;
+					date = 9;
 					break;
 				case October:
-					date = 1;
+					date = 10;
 					break;
 				case November:
-					date = 1;
+					date = 11;
 					break;
 				case December:
-					date = 1;
+					date = 12;
 					break;
 				default:
 					date = 0;
