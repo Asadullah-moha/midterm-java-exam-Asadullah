@@ -1,5 +1,7 @@
 package design;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Scanner;
 
 public class EmployeeInfo {
@@ -21,24 +23,29 @@ public class EmployeeInfo {
 	 * declare few static and final fields and some non-static fields
 	 */
 	static String companyName;
-	
+	static final int PERFORMANCE_BEST = 1;
+	static final int PERFORMANCE_AVERAGE = 2;
 	/*
 	 * You must implement the logic for below 2 methods and 
 	 * following 2 methods are prototype as well for other methods need to be design,
 	 * as you will come up with the new ideas.
 	 */
-	
+
+	private static double salary;
 	/*
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo(int employeeId){
-		
+	public EmployeeInfo(){
+
 	}
-    public EmployeeInfo(String name, int employeeId){
-		
+    public EmployeeInfo(int employeeId){
 	}
-	
+
+	public EmployeeInfo(int i, String hr, double v) {
+
+	}
+
 	/*
 	 * This methods should calculate Employee bonus based on salary and performance.
 	 * Then it will return the total yearly bonus. So you need to implement the logic.
@@ -47,31 +54,58 @@ public class EmployeeInfo {
 	 * So you probably need to send 2 arguments.
 	 * 
 	 */
-	public static int calculateEmployeeBonus(int numberOfYearsWithCompany){
-		int total=0;
-		return total;
+	public static double calculateEmployeeBonus(int performance) {
+		double bonus = 0;
+        switch (performance) {
+            case PERFORMANCE_BEST -> bonus = 0.10 * salary; // 10% bonus for best performance
+            case PERFORMANCE_AVERAGE -> bonus = 0.08 * salary; // 8% bonus for average performance
+            default -> {
+            }
+            // Handle other cases
+        }
+		return bonus;
 	}
-	
+
+	public static void setSalary(double salary) {
+		EmployeeInfo.salary = salary;
+	}
+
 	/*
 	 * This methods should calculate Employee Pension based on salary and numbers of years with the company.
 	 * Then it will return the total pension. So you need to implement the logic.
 	 * Hints: pension will be 5% of the salary for 1 year, 10% for 2 years with the company and so on.
 	 * 
 	 */
-	public static int calculateEmployeePension(){
+	public int calculateEmployeePension(Date joiningDate, Date todaysDate){
 		int total=0;
 		Scanner sc  = new Scanner(System.in);
 		System.out.println("Please enter start date in format (example: May,2015): ");
 		String joiningDate = sc.nextLine();
 		System.out.println("Please enter today's date in format (example: August,2017): ");
-		String todaysDate = sc.nextLine();
-        String convertedJoiningDate = DateConversion.convertDate(joiningDate);
-        String convertedTodaysDate = DateConversion.convertDate(todaysDate);
+		String todayDate = sc.nextLine();
+		String convertedJoiningDate = DateConversion.convertDate(joiningDate);
+        String convertedTodaysDate;
+		convertedTodaysDate = DateConversion.convertDate(todayDate);
 
-        //implement numbers of year from above two dates
+		//implement numbers of year from above two dates
 		//Calculate pension
 
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MMMM,yyyy");
 
+		try {
+			long millisecondsInYear = 1000L * 60 * 60 * 24 * 365;
+			long differenceInMilliseconds = todayDate.trim() - joiningDate.trim();
+			int yearsWithCompany = (int) (differenceInMilliseconds / millisecondsInYear);
+
+			// Calculate pension based on the number of years with the company and salary
+			total = (int) (0.05 * yearsWithCompany * salary); // Assuming 5% pension per year
+
+			System.out.println("Years with the company: " + yearsWithCompany);
+			return total;
+		} catch (ParseException e) {
+			e.printStackTrace();
+			System.out.println("Invalid date format. Please use the format (example: May,2015).");
+		}
 
 		return total;
 	}
@@ -82,8 +116,7 @@ public class EmployeeInfo {
 			String [] extractMonth = date.split(",");
 			String givenMonth = extractMonth[0];
 			int monthDate = whichMonth(givenMonth);
-			String actualDate = monthDate + "/" + extractMonth[1];
-			return actualDate;
+            return monthDate + "/" + extractMonth[1];
 		}
 
 		public static int whichMonth(String givenMonth) {
