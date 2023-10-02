@@ -38,9 +38,13 @@ public class EmployeeInfo {
 	 * you must have multiple constructor.
 	 * Must implement below constructor.
 	 */
-	public EmployeeInfo(){
-
+	public EmployeeInfo() {
+		this.salary = 0.0;
 	}
+	public EmployeeInfo(double salary) {
+		this.salary = salary;
+	}
+
     public EmployeeInfo(@SuppressWarnings("unused") int employeeId){
 	}
 
