@@ -1,7 +1,6 @@
 package datastructure;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class UseArrayList {
 
@@ -27,14 +26,12 @@ public class UseArrayList {
 		}
 
 		System.out.println("\nElements using while loop and Iterator:");
-		Iterator<Integer> iterator = arrayList.iterator();
-		while (iterator.hasNext()) {
-			int element = iterator.next();
-			System.out.println(element);
-		}
+        for (int element : arrayList) {
+            System.out.println(element);
+        }
 
 		int index = 2;
-		if (index >= 0 && index < arrayList.size()) {
+		if (index < arrayList.size()) {
 			int peekedElement = arrayList.get(index);
 			System.out.println("\nPeeked element at index " + index + ": " + peekedElement);
 		} else {

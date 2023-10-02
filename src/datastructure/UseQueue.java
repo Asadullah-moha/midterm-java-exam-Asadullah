@@ -1,11 +1,11 @@
 package datastructure;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class UseQueue {
 
+	@SuppressWarnings("DataFlowIssue")
 	public static void main(String[] args) {
 		/*
 		 * Demonstrate how to use Queue that includes add,peek,remove,pool elements.
@@ -26,13 +26,10 @@ public class UseQueue {
 		}
 
 		System.out.println("\nElements using while loop and Iterator:");
-		Iterator<Integer> iterator = queue.iterator();
-		while (iterator.hasNext()) {
-			int element = iterator.next();
-			System.out.println(element);
-		}
+        queue.forEach(System.out::println);
 
-		int frontElement = queue.peek();
+		int frontElement;
+		frontElement = queue.peek();
 		System.out.println("\nFront element (peeked): " + frontElement);
 
 		int removedElement = queue.remove();
@@ -40,8 +37,8 @@ public class UseQueue {
 
 		System.out.println("\nUpdated Queue:");
 		for (int element : queue) {
-			System.out.println(element);
-		}
+            System.out.println(element);
+        }
 	}
 
 }

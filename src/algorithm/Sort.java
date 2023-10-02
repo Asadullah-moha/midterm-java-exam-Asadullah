@@ -10,9 +10,8 @@ public class Sort {
 	 */
 
 
-    public int[] selectionSort(int [] array){
+    public void selectionSort(int [] array){
         final long startTime = System.currentTimeMillis();
-        int [] list = array;
 
         for(int j=0; j<array.length-1; j++){
             int min = j;
@@ -27,14 +26,11 @@ public class Sort {
         }
 
         final long endTime = System.currentTimeMillis();
-        final long executionTime = endTime - startTime;
-        this.executionTime = executionTime;
-        return list;
+        this.executionTime = endTime - startTime;
     }
 
-    public int[] insertionSort(int [] array){
+    public void insertionSort(int [] array){
         final long startTime = System.currentTimeMillis();
-        int [] list = array;
         //implement here
         for (int i = 1; i < array.length; i++) {
             int current = array[i];
@@ -49,13 +45,10 @@ public class Sort {
 
 
         final long endTime = System.currentTimeMillis();
-        final long executionTime = endTime - startTime;
-        this.executionTime = executionTime;
-        return list;
+        this.executionTime = endTime - startTime;
     }
 
     public int[] bubbleSort(int [] array){
-        int [] list = array;
         //implement here
         boolean swapped;
 
@@ -72,12 +65,11 @@ public class Sort {
             }
         } while (swapped);
 
-        return list;
+        return array;
     }
     
 
     public int [] mergeSort(int [] array){
-        int [] list = array;
         //implement here
         if (array.length <= 1) {
             return array;
@@ -114,7 +106,6 @@ public class Sort {
     
 
     public int [] quickSort(int [] array){
-        int [] list = array;
         //implement here
         return quickSort(array, 0, array.length - 1);
     }
@@ -149,23 +140,10 @@ public class Sort {
         return temp;
     }
     
-    public int [] heapSort(int [] array){
-        int [] list = array;
+    public void heapSort(int [] array){
         //implement here
         int n = 0;
-        for (int i = n / 2 - 1; i >= 0; i--) {
-            heapSort(array, n, i);
-        }
 
-        for (int i = n - 1; i > 0; i--) {
-            int temp = array[0];
-            array[0] = array[i];
-            array[i] = temp;
-
-            heapSort(array);
-        }
-
-        return list;
     }
 
     private void heapSort(int[] array, int n, int i) {
@@ -173,7 +151,6 @@ public class Sort {
 
 
     public int [] bucketSort(int [] array){
-        int [] list = array;
         //implement here
         if (array == null || array.length == 0) {
             return array;
@@ -204,11 +181,10 @@ public class Sort {
         }
         
 
-        return list;
+        return array;
     }
     
     public int [] shellSort(int [] array){
-        int [] list = array;
         //implement here
         int n = array.length;
 
@@ -225,7 +201,7 @@ public class Sort {
             }
         }
 
-        return list;
+        return array;
     }
 
     public static void printSortedArray(int [] array){
