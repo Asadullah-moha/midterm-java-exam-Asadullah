@@ -14,17 +14,14 @@ public class FindMissingNumber {
     }
 
     public static int findMissingNumber(int[] array) {
-        // Calculate the expected sum of the first n natural numbers
         int n = array.length + 1;
         int expectedSum = n * (n + 1) / 2;
 
-        // Calculate the sum of the array elements
         int actualSum = 0;
         for (int num : array) {
             actualSum += num;
         }
 
-        // The missing number is the difference between expected and actual sums
         return expectedSum - actualSum;
     }
 }

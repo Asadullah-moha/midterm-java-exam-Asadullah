@@ -2,24 +2,23 @@ package math.problems;
 
 @SuppressWarnings("ALL")
 public class Fibonacci {
-    @SuppressWarnings("unused")
+
     public Fibonacci() {
     }
 
     public static void main(String[] args) {
-        int n = 40; // Change this to the number of Fibonacci numbers you want
+        int n = 40;
         long[] fibonacciNumbers = new long[n];
 
         // First two Fibonacci numbers
         fibonacciNumbers[0] = 0;
         fibonacciNumbers[1] = 1;
 
-        // Generate the rest of the Fibonacci numbers
+
         for (int i = 2; i < n; i++) {
             fibonacciNumbers[i] = fibonacciNumbers[i - 1] + fibonacciNumbers[i - 2];
         }
 
-        // Print the Fibonacci numbers
         System.out.print("First " + n + " Fibonacci numbers: ");
         for (int i = 0; i < n; i++) {
             System.out.print(fibonacciNumbers[i] + " ");

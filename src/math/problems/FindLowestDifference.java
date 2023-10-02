@@ -16,9 +16,9 @@ public class FindLowestDifference {
     public static int findLowestDifference(int[] array1, int[] array2) {
         int lowestDifference = Integer.MAX_VALUE;
 
-        for (int i = 0; i < array1.length; i++) {
-            for (int j = 0; j < array2.length; j++) {
-                int currentDifference = Math.abs(array1[i] - array2[j]);
+        for (int k : array1) {
+            for (int i : array2) {
+                int currentDifference = Math.abs(k - i);
                 if (currentDifference < lowestDifference) {
                     lowestDifference = currentDifference;
                 }
