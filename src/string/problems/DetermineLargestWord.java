@@ -33,11 +33,9 @@ public class DetermineLargestWord {
     public static Map<Integer, String> findTheLargestWord(String wordGiven){
         Map<Integer, String> map = new HashMap<Integer, String>();
         String st = "";
-        //implement
 
         String[] words = new String[0];
         for (String word : words) {
-            // Remove punctuation marks if any
             word = word.replaceAll("[^a-zA-Z]", "");
 
             int length = word.length();

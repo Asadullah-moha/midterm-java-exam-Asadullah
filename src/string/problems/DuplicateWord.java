@@ -47,4 +47,7 @@ public class DuplicateWord {
         System.out.println("Average Word Length: " + averageLength);
     }
 
+    public static int findDuplicates(String input) {
+        return 0;
+    }
 }
